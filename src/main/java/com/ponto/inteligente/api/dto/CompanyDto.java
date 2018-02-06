@@ -1,6 +1,6 @@
 package com.ponto.inteligente.api.dto;
 
-public class CompanyDto {
+public class CompanyDto extends AbstractDto {
 	
 	private Long id;
 	private String companyName;

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class TimeDto {
+public class TimeDto extends AbstractDto {
 	
 	private Optional<Long> id = Optional.empty();
 	private String date;

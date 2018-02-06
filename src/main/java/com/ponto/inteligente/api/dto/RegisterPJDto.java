@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
 
-public class RegisterPJDto {
+public class RegisterPJDto extends AbstractDto {
 	
 	private Long id;
 	private String name;
