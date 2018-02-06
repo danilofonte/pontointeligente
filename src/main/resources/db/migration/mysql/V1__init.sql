@@ -14,7 +14,7 @@ CREATE TABLE `employee` (
   `email` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL,
-  `lunch_hour_quty` float DEFAULT NULL,
+  `lunch_hour_qty` float DEFAULT NULL,
   `working_hours_qty` float DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `hour_value` decimal(19,2) DEFAULT NULL,
