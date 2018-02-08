@@ -37,7 +37,7 @@ public class RegisterPFDto extends AbstractDto {
 		return name;
 	}
 
-	public void setNome(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
