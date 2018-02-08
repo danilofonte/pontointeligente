@@ -51,7 +51,7 @@ public class EmployeeController {
 	 * @throws NoSuchAlgorithmException
 	 */
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Response<EmployeeDto>> atualizar(@PathVariable("id") Long id,
+	public ResponseEntity<Response<EmployeeDto>> update(@PathVariable("id") Long id,
 			@Valid @RequestBody EmployeeDto employeeDto, BindingResult result) throws NoSuchAlgorithmException {
 		Response<EmployeeDto> response = new Response<EmployeeDto>();
 
