@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.ponto.inteligente.api.entities.Employee;
@@ -30,6 +31,7 @@ public class DefaultEmployeeService implements EmployeeService {
 	}
 
 	@Override
+	@Cacheable("employeeByEmail")
 	public Optional<Employee> findByEmail(String email) {
 		return Optional.ofNullable(this.employeeRepository.findByEmail(email));
 
