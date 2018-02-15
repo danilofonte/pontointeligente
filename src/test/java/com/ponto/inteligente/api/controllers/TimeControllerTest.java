@@ -56,7 +56,7 @@ public class TimeControllerTest {
 	
 	@Test
 	@WithMockUser
-	public void testCadastrarLancamento() throws Exception {
+	public void testAddTime() throws Exception {
 		Time time = initTime();
 		BDDMockito.given(this.employeeService.findById(Mockito.anyLong())).willReturn(Optional.of(new Employee()));
 		BDDMockito.given(this.timeService.persist(Mockito.any(Time.class))).willReturn(time);
@@ -75,7 +75,7 @@ public class TimeControllerTest {
 	
 	@Test
 	@WithMockUser
-	public void testCadastrarLancamentoFuncionarioIdInvalido() throws Exception {
+	public void testAddTimeWithInvalidEmployeeId() throws Exception {
 		BDDMockito.given(this.employeeService.findById(Mockito.anyLong())).willReturn(Optional.empty());
 
 		mvc.perform(MockMvcRequestBuilders.post(URL_BASE)
@@ -89,7 +89,7 @@ public class TimeControllerTest {
 	
 	@Test
 	@WithMockUser(username = "admin@admin.com", roles = {"ADMIN"})
-	public void testRemoverLancamento() throws Exception {
+	public void testRemoveTime() throws Exception {
 		BDDMockito.given(this.timeService.findById(Mockito.anyLong())).willReturn(Optional.of(new Time()));
 
 		mvc.perform(MockMvcRequestBuilders.delete(URL_BASE + TIME_ID)
@@ -99,7 +99,7 @@ public class TimeControllerTest {
 	
 	@Test
 	@WithMockUser
-	public void testRemoverLancamentoAcessoNegado() throws Exception {
+	public void testRemoveTimeDeniedAccess() throws Exception {
 		BDDMockito.given(this.timeService.findById(Mockito.anyLong())).willReturn(Optional.of(new Time()));
 
 		mvc.perform(MockMvcRequestBuilders.delete(URL_BASE + TIME_ID)
