@@ -46,7 +46,7 @@ public class TimeControllerTest {
 	@MockBean
 	private EmployeeService employeeService;
 	
-	private static final String URL_BASE = "/api/lancamentos/";
+	private static final String URL_BASE = "/api/time/";
 	private static final Long EMPLOYEE_ID = 1L;
 	private static final Long TIME_ID = 1L;
 	private static final String TYPE = TypeEnum.START_WORK_TIME.name();
@@ -67,9 +67,9 @@ public class TimeControllerTest {
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.data.id").value(TIME_ID))
-				.andExpect(jsonPath("$.data.tipo").value(TYPE))
-				.andExpect(jsonPath("$.data.data").value(this.dateFormat.format(DATE)))
-				.andExpect(jsonPath("$.data.funcionarioId").value(EMPLOYEE_ID))
+				.andExpect(jsonPath("$.data.type").value(TYPE))
+				.andExpect(jsonPath("$.data.date").value(this.dateFormat.format(DATE)))
+				.andExpect(jsonPath("$.data.employeeId").value(EMPLOYEE_ID))
 				.andExpect(jsonPath("$.errors").isEmpty());
 	}
 	
